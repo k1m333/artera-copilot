@@ -1,0 +1,5 @@
+streamlit
+openai-agents
+chromadb
+python-dotenv
+nest-asyncio
