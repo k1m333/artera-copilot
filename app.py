@@ -1,10 +1,9 @@
+import nest_asyncio
+nest_asyncio.apply()
 import streamlit as st
 import asyncio
 from main import agent, Runner
 from agents.exceptions import InputGuardrailTripwireTriggered
-import nest_asyncio
-
-nest_asyncio.apply()
 
 st.title("Artera Healthcare Copilot")
 st.caption("Senior Staff AI Builder Interview Project")
