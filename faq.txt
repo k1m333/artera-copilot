@@ -1,0 +1,5 @@
+Artera Copilot FAQ:
+- To reschedule an appointment, the patient must provide at least 24 hours notice.
+- If a patient is running more than 15 minutes late, the appointment must be rescheduled.
+- For billing inquiries, patients should be routed to the billing department.
+- The clinic is closed on all major federal holidays.
