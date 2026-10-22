@@ -36,7 +36,7 @@ if prompt := st.chat_input("Ask about appointments or clinic policies..."):
                 full_prompt = f"{history_string}\nUser: {prompt}\nAssistant:"
                 
                 # 3. Run the agent with the contextualized prompt
-                result = asyncio.run(Runner.run(agent, full_prompt))
+                result = Runner.run_sync(agent, full_prompt)
                 response = result.final_output
                 
             except InputGuardrailTripwireTriggered:
