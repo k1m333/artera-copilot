@@ -29,7 +29,7 @@ async def medical_guardrail(ctx, agent, input) -> GuardrailFunctionOutput:
 
 # 1. Initialize ChromaDB and load the FAQ
 chroma_client = chromadb.Client()
-collection = chroma_client.create_collection(name="faq")
+collection = chroma_client.get_or_create_collection(name="faq")
 
 with open("faq.txt", "r") as f:
     faq_text = f.read()
