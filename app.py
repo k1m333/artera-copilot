@@ -3,6 +3,9 @@ from main import agent, Runner
 from agents.exceptions import InputGuardrailTripwireTriggered
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
+from openai import AsyncOpenAI
+from agents import set_default_openai_client
+import os
 
 st.title("Artera Healthcare Copilot")
 st.caption("Senior Staff AI Builder Interview Project")
@@ -21,7 +24,10 @@ def run_agent_in_thread(full_prompt):
     # Create a fresh event loop for this specific thread
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    
+
+    new_client = AsyncOpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    set_default_openai_client(new_client)
+
     async def _run():
         return await Runner.run(agent, full_prompt)
     
